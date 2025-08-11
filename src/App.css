@@ -1,0 +1,177 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.cv-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.cv-header {
+  background: #2563eb;
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.cv-header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cv-section {
+  padding: 30px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cv-section:last-child {
+  border-bottom: none;
+}
+
+.cv-actions {
+  padding: 30px;
+  text-align: center;
+  background-color: #f8fafc;
+}
+
+.cv-actions button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cv-actions button:hover {
+  background-color: #1d4ed8;
+}
+
+
+/* individual components */
+
+.cv-section h3 {
+  color: #1f2937;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 8px;
+}
+
+.cv-section form {
+  display: grid;
+  gap: 16px;
+}
+
+.cv-section label {
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.cv-section input,
+.cv-section textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: .9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cv-section input:focus,
+.cv-section textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  
+}
+
+textarea::placeholder {
+    color: #9ca3af;
+    font-style: italic;
+    line-height: 1.4;
+    white-space: pre-line; /* Preserves line breaks */
+}
+
+.cv-section p {
+  margin: 8px 0;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.cv-section p strong {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.cv-section button {
+  background-color: #6b7280;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background-color 0.2s;
+}
+
+.cv-section button:hover {
+  background-color: #4b5563;
+}
+
+.cv-section {
+  transition: all 0.3s ease;
+}
+
+.cv-section form,
+.cv-section > div {
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .cv-container {
+    margin: 10px;
+    border-radius: 8px;
+  }
+
+  .cv-header {
+    padding: 20px;
+  }
+
+  .cv-section {
+    padding: 20px;
+  }
+}
