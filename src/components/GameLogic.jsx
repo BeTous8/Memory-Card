@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from "react";
-import ScoreBoard from "./ScoreBoard";
+// import ScoreBoard from "./ScoreBoard";
 import CardGame from "./CardGame";
 
 
 export default function GameLogic () {
     const [cards, setCards] = useState([]);
-    const [gameOver, setGameOver] = useState(false);
-    const [score, setScore] = useState(0);
-    const [highScore, setHighScore] = useState(0);
+    // const [gameOver, setGameOver] = useState(false);
+    // const [score, setScore] = useState(0);
+    // const [highScore, setHighScore] = useState(0);
 
     // Only on mount
     useEffect(() => {
@@ -57,22 +57,22 @@ export default function GameLogic () {
 
 
 
-    function handleClick() {
+    // function handleClick() {
 
-    }
+    // }
 
 
     return (
         <>
-            <ScoreBoard
+            {/* <ScoreBoard
                 score={score}
                 highScore={highScore}
                 isGameOver={gameOver}
-            />
+            /> */}
 
             <CardGame
                 cards={cards}
-                handleClick={handleClick}
+                handleClick={() => {}}
             />
         </>
     )
