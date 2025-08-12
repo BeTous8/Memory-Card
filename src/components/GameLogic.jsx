@@ -57,9 +57,36 @@ export default function GameLogic () {
 
 
 
-    // function handleClick() {
+    function handleClick(selectedId) {
+        const selectedCard = cards.find(card => card.id === selectedId);
 
-    // }
+        if (selectedCard.wasSelected) {
+            handleGameOver();
+            
+        } else {
+            handleSuccessfulClick();
+            
+        }
+        
+
+    }
+
+    const handleGameOver = () => {
+        //reset score to 0
+        //call for new set of cards
+        //keep current highScore
+    }
+
+    const handleSuccessfulClick = () => {
+        //set is selected to true for the card
+        //shuffle the deck
+        setCards(shuffleCards(cards))
+        //increase score by one
+    }
+
+    function shuffleCards(cards) {
+        return [...cards].sort(() => Math.random() - 0.5);
+    }
 
 
     return (
@@ -72,7 +99,7 @@ export default function GameLogic () {
 
             <CardGame
                 cards={cards}
-                handleClick={() => {}}
+                handleClick={handleClick}
             />
         </>
     )
