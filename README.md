@@ -1,172 +1,69 @@
-# CV Application
+# Memory Card Game
 
-A modern, responsive CV builder built with React that allows users to create and edit professional resumes with a clean, intuitive interface.
+A React-based memory game featuring random Pokemon cards. Test your memory by clicking on cards without repeating any!
+
+## 🎮 How to Play
+
+- Click on Pokemon cards to score points
+- **Don't click the same card twice!** 
+- Cards shuffle after each click
+- Game ends when you click a previously selected card
+- Try to click all 10 cards to win!
 
 ## 🚀 Live Demo
 
-[**View Live Application**](https://ben-cv-builder.netlify.app)
+[Play the game here](https://chimerical-profiterole-f636ac.netlify.app/)
 
-## ✨ Features
+## 🛠️ Technologies Used
 
-- **Global Edit/Display Mode** - Edit entire CV at once or view final formatted version
-- **Three Main Sections:**
-  - General Information (Name, Email, Phone)
-  - Educational Experience (School, Study Title, Date)
-  - Practical Experience (Company, Position, Responsibilities, Date Range)
-- **Individual Section Reset** - Clear individual sections while preserving others
-- **Real-time Form Validation** - Controlled components with immediate feedback
-- **Responsive Design** - Works seamlessly on desktop, tablet, and mobile
-- **Professional Styling** - Clean, modern interface with smooth transitions
-- **Accessibility Features** - Proper labels, focus states, and semantic HTML
+- **React** - Component-based UI
+- **Pokemon API** - Random Pokemon data
+- **CSS Grid** - Responsive card layout
+- **Netlify** - Deployment
 
-## 🛠️ Built With
+## ⚡ Features
 
-- **React** - Frontend framework
-- **Vite** - Build tool and development server
-- **CSS3** - Custom styling with modern design principles
-- **JavaScript ES6+** - Modern JavaScript features
-- **Netlify** - Deployment and hosting
+- Random Pokemon generation each game
+- Score tracking with high score persistence
+- Responsive 2×5 grid layout
+- Card shuffling after each click
+- Win/lose game detection
 
-## 🏗️ Technical Architecture
-
-### State Management
-- **Lifted State Pattern** - All CV data managed at App component level
-- **Controlled Components** - Form inputs controlled by React state
-- **Props-based Communication** - Parent-child data flow via props and callbacks
-
-### Component Structure
-```
-App
-├── GeneralInfo
-├── EducationalExperience
-├── PracticalExperience
-└── Global Controls
-```
-
-### Key Patterns Implemented
-- Controlled form inputs with real-time updates
-- Conditional rendering for edit/display modes
-- Event handling and data validation
-- Responsive CSS with mobile-first approach
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/BeTous8/CV-Application.git
-   cd CV-Application
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open in browser**
-   ```
-   http://localhost:5173
-   ```
-
-### Build for Production
+## 🏃‍♂️ Run Locally
 
 ```bash
+# Clone the repository
+git clone https://github.com/BeTous8/Memory-Card.git
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+
+# Build for production
 npm run build
 ```
 
-The built files will be in the `dist` directory, ready for deployment.
+## 🎯 Game Rules
 
-## 💡 Usage
+1. Click on any Pokemon card to start
+2. Remember which cards you've clicked
+3. Cards shuffle position after each click
+4. Score increases by 1 for each new card clicked
+5. Game over if you click the same card twice
+6. Goal: Click all 10 cards without repeating
 
-1. **Edit Mode**: Fill in your information across all three sections
-2. **Review**: Switch to display mode to see your formatted CV
-3. **Refine**: Return to edit mode to make adjustments
-4. **Reset**: Use individual reset buttons to clear specific sections
+## 🔮 Future Improvements
 
-## 🎨 Design Decisions
+- **Modal System** - Game over/win modals with play again functionality
+- **Difficulty Levels** - Easy (6 cards), Medium (10 cards), Hard (15 cards)
+- **Mobile Optimization** - Better responsive design for mobile devices
+- **Sound Effects** - Audio feedback for clicks and game events
+- **Animation** - Card flip animations and smooth transitions
+- **Theme Selection** - Choose between Pokemon, Rick & Morty, or other APIs
+- **Local Storage** - Persist high scores between sessions
+- **Timer Mode** - Add time pressure for extra challenge
+- **Leaderboard** - Track and display best scores
 
-### UX Improvements
-- **Global edit mode** instead of individual section editing for better user flow
-- **Date ranges** for work experience with separate from/to inputs
-- **Textarea for responsibilities** to allow detailed descriptions
-- **Visual feedback** with hover states and focus indicators
-
-### Technical Choices
-- **Lifted state architecture** for centralized data management
-- **Single CSS file** for simplified styling management
-- **Modern ES6+ syntax** with hooks and functional components
-- **Responsive-first design** with mobile considerations
-
-## 📱 Responsive Design
-
-- **Mobile**: Single column layout with optimized spacing
-- **Tablet**: Maintains readability with adjusted padding
-- **Desktop**: Full layout with maximum width constraints
-
-## 🔧 Development Features
-
-- **Hot reload** during development
-- **Error boundaries** for graceful error handling
-- **Console logging** for debugging (disabled in production)
-- **Modern build optimization** with Vite
-
-## 📈 Future Enhancements
-
-Potential features for future development:
-- **Multiple CV templates** with different styling options
-- **PDF export** functionality
-- **AI-powered content suggestions** based on job descriptions
-- **Multi-language support**
-- **Cloud storage** for saving multiple CV versions
-- **Print optimization** for physical resume printing
-
-## 🧪 Testing
-
-The application has been tested across:
-- ✅ Chrome, Firefox, Safari, Edge
-- ✅ Mobile devices (iOS and Android)
-- ✅ Different screen sizes and orientations
-- ✅ Keyboard navigation and accessibility
-
-## 📝 Learning Objectives Achieved
-
-This project demonstrates proficiency in:
-- **React fundamentals** (components, state, props, hooks)
-- **Modern JavaScript** (ES6+, destructuring, template literals)
-- **State management patterns** (lifting state up, controlled components)
-- **CSS styling** (responsive design, modern layouts, animations)
-- **Development workflow** (Git, deployment, project organization)
-- **User experience design** (intuitive interfaces, accessibility)
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 👨‍💻 Author
-
-**BeTous8**
-- GitHub: [@BeTous8](https://github.com/BeTous8)
-- Project: [CV Application](https://github.com/BeTous8/CV-Application)
-- Live Demo: [ben-cv-builder.netlify.app](https://ben-cv-builder.netlify.app)
-
----
-
-*Built as part of The Odin Project curriculum to demonstrate React development skills and modern web development practices.*
+Built as part of The Odin Project React curriculum.
