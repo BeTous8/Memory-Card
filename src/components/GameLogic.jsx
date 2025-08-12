@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from "react";
-// import ScoreBoard from "./ScoreBoard";
+import ScoreBoard from "./ScoreBoard";
 import CardGame from "./CardGame";
 
 
 export default function GameLogic () {
     const [cards, setCards] = useState([]);
-    // const [gameOver, setGameOver] = useState(false);
-    // const [score, setScore] = useState(0);
-    // const [highScore, setHighScore] = useState(0);
+    const [isGameOver, setIsGameOver] = useState(false);
+    const [score, setScore] = useState(0);
+    const [highScore, setHighScore] = useState(0);
 
     // Only on mount
     useEffect(() => {
@@ -53,18 +53,21 @@ export default function GameLogic () {
     };
 
     
-
-
-
-
     function handleClick(selectedId) {
         const selectedCard = cards.find(card => card.id === selectedId);
+
+        const notYetSelected = cards.filter(card => card.wasSelected === false)
+
+        if (notYetSelected.length === 0) {
+            // declare winner with modal
+            handleModal('win')
+        }
 
         if (selectedCard.wasSelected) {
             handleGameOver();
             
         } else {
-            handleSuccessfulClick();
+            handleSuccessfulClick(selectedId);
             
         }
         
@@ -72,30 +75,54 @@ export default function GameLogic () {
     }
 
     const handleGameOver = () => {
-        //reset score to 0
-        //call for new set of cards
         //keep current highScore
+        setHighScore(Math.max(score, highScore))
+        setScore(0);
+        
+
+        // declare game over with modal
+        handleModal('lose')
+        //call for new set of cards
+        fetchCards();
+        
     }
 
-    const handleSuccessfulClick = () => {
+    const handleSuccessfulClick = (selectedId) => {
         //set is selected to true for the card
+        const updatedCards = cards.map(card => 
+            card.id === selectedId
+            ? {...card, wasSelected : true}
+            : card
+        )
         //shuffle the deck
-        setCards(shuffleCards(cards))
+        setCards(shuffleCards(updatedCards))
         //increase score by one
+        setScore(score + 1)
     }
 
     function shuffleCards(cards) {
         return [...cards].sort(() => Math.random() - 0.5);
     }
 
+    const handleModal = (gameResult) => {
+        if (gameResult === 'win') {
+            //open a modal say the game is over with Play Again button that fetch new cards
+        } else if (gameResult === 'lose') {
+            //open modal and say you win the game
+            //make sure you move fetch card from handleGameOver function to here
+        }
+    }
+
 
     return (
         <>
-            {/* <ScoreBoard
+            <h1>Memory Cards Game</h1>
+            <p>Don't select a card twice or you'll lose!</p>
+            <ScoreBoard
                 score={score}
                 highScore={highScore}
-                isGameOver={gameOver}
-            /> */}
+                isGameOver={isGameOver}
+            />
 
             <CardGame
                 cards={cards}
